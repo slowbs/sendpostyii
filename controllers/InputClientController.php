@@ -87,9 +87,13 @@ class InputClientController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            //$params = [':kpi_id' => '00200'];
+            $params = [':kpi_id' => $model->kpi_id];
+            //$kpi_id = '00200';
 
             $url = 'http://localhost/github/cockpit11/frontend/web/index.php?r=province%2Fcreate2';
-            $posts = Yii::$app->db->createCommand('SELECT * FROM province')
+            $posts = Yii::$app->db->createCommand('SELECT * FROM province where kpiid =:kpi_id')
+            ->bindValues($params)
             ->queryAll();
             $posts['0'] += ['test' => '5E763F218A6C336741566347F46C5'];
             $post = 'data='.json_encode($posts['0']);
