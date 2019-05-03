@@ -36,6 +36,7 @@ class ProvinceController extends Controller
             $content = json_decode($_POST['data'],true);
                 if($content['test'] == "5E763F218A6C336741566347F46C5") {
                 $this->enableCsrfValidation = false;
+                return parent::beforeAction($action);
                 }
             }
             else{
@@ -44,7 +45,7 @@ class ProvinceController extends Controller
         }
         else{
             return parent::beforeAction($action);
-            }
+        }
     }
 
 
