@@ -4,18 +4,18 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\RpstSearch */
+/* @var $searchModel app\models\InputClientSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Rpsts';
+$this->title = 'Input Clients';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="rpst-index">
+<div class="input-client-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Rpst', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Input Client', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -52,7 +52,8 @@ $this->params['breadcrumbs'][] = $this->title;
             //'b11',
             //'b12',
             //'apcode',
-            //'rpstcode',
+            //'hospcode',
+            //'kpi_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

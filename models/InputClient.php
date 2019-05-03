@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "rpst".
+ * This is the model class for table "input_client".
  *
  * @property int $id
  * @property string $a1
@@ -33,16 +33,17 @@ use Yii;
  * @property string $b11
  * @property string $b12
  * @property string $apcode
- * @property string $rpstcode
+ * @property string $hospcode
+ * @property string $kpi_id
  */
-class Rpst extends \yii\db\ActiveRecord
+class InputClient extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'rpst';
+        return 'input_client';
     }
 
     /**
@@ -51,8 +52,8 @@ class Rpst extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            /* [['apcode', 'rpstcode'], 'required'], */
-            [['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'b10', 'b11', 'b12', 'apcode', 'rpstcode'], 'string', 'max' => 10],
+            [['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'b10', 'b11', 'b12', 'apcode', 'kpi_id'], 'string', 'max' => 10],
+            [['hospcode'], 'string', 'max' => 30],
         ];
     }
 
@@ -88,7 +89,8 @@ class Rpst extends \yii\db\ActiveRecord
             'b11' => 'B11',
             'b12' => 'B12',
             'apcode' => 'Apcode',
-            'rpstcode' => 'Rpstcode',
+            'hospcode' => 'Hospcode',
+            'kpi_id' => 'Kpi ID',
         ];
     }
 }

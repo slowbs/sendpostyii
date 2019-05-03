@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\RpstSearch */
+/* @var $model app\models\InputClientSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="rpst-search">
+<div class="input-client-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -67,7 +67,9 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'apcode') ?>
 
-    <?php // echo $form->field($model, 'rpstcode') ?>
+    <?php // echo $form->field($model, 'hospcode') ?>
+
+    <?php // echo $form->field($model, 'kpi_id') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Rpst */
+/* @var $model app\models\InputClient */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="rpst-form">
+<div class="input-client-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
@@ -62,7 +62,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'apcode')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'rpstcode')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'hospcode')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'kpi_id')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

@@ -2,7 +2,7 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=jotform',
+    'dsn' => 'mysql:host=localhost;dbname=kpiprovince',
     'username' => 'slowbs',
     'password' => 'sodsongig4',
     'charset' => 'utf8',

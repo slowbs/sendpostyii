@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Rpst */
+/* @var $model app\models\InputClient */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Rpsts', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Input Clients', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="rpst-view">
+<div class="input-client-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -55,7 +55,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'b11',
             'b12',
             'apcode',
-            'rpstcode',
+            'hospcode',
+            'kpi_id',
         ],
     ]) ?>
 

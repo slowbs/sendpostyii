@@ -4,12 +4,12 @@ namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Rpst;
+use app\models\InputClient;
 
 /**
- * RpstSearch represents the model behind the search form of `app\models\Rpst`.
+ * InputClientSearch represents the model behind the search form of `app\models\InputClient`.
  */
-class RpstSearch extends Rpst
+class InputClientSearch extends InputClient
 {
     /**
      * {@inheritdoc}
@@ -18,7 +18,7 @@ class RpstSearch extends Rpst
     {
         return [
             [['id'], 'integer'],
-            [['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'b10', 'b11', 'b12', 'apcode', 'rpstcode'], 'safe'],
+            [['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'b10', 'b11', 'b12', 'apcode', 'hospcode', 'kpi_id'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class RpstSearch extends Rpst
      */
     public function search($params)
     {
-        $query = Rpst::find();
+        $query = InputClient::find();
 
         // add conditions that should always apply here
 
@@ -86,7 +86,8 @@ class RpstSearch extends Rpst
             ->andFilterWhere(['like', 'b11', $this->b11])
             ->andFilterWhere(['like', 'b12', $this->b12])
             ->andFilterWhere(['like', 'apcode', $this->apcode])
-            ->andFilterWhere(['like', 'rpstcode', $this->rpstcode]);
+            ->andFilterWhere(['like', 'hospcode', $this->hospcode])
+            ->andFilterWhere(['like', 'kpi_id', $this->kpi_id]);
 
         return $dataProvider;
     }

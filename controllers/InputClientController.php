@@ -3,16 +3,16 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\Rpst;
-use app\models\RpstSearch;
+use app\models\InputClient;
+use app\models\InputClientSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * RpstController implements the CRUD actions for Rpst model.
+ * InputClientController implements the CRUD actions for InputClient model.
  */
-class RpstController extends Controller
+class InputClientController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -29,30 +29,13 @@ class RpstController extends Controller
         ];
     }
 
-    /* public function beforeAction($action) 
-    { 
-        $this->enableCsrfValidation = false; 
-        return parent::beforeAction($action); 
-    } */
-
-    public function beforeAction($action) 
-    {
-        if($action->id == "create"){
-            $content = json_decode($_POST['data'],true);
-            if($content['test'] == "duck"){
-        $this->enableCsrfValidation = false;
-        }   
-    }
-        return parent::beforeAction($action); 
-    }
-
     /**
-     * Lists all Rpst models.
+     * Lists all InputClient models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new RpstSearch();
+        $searchModel = new InputClientSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -62,7 +45,7 @@ class RpstController extends Controller
     }
 
     /**
-     * Displays a single Rpst model.
+     * Displays a single InputClient model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -75,13 +58,13 @@ class RpstController extends Controller
     }
 
     /**
-     * Creates a new Rpst model.
+     * Creates a new InputClient model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Rpst();
+        $model = new InputClient();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -92,16 +75,8 @@ class RpstController extends Controller
         ]);
     }
 
-    public function actionCreate2()
-    {
-        $posts = Yii::$app->db->createCommand('SELECT * FROM province')
-            ->queryOne();
-            //print_r($posts);
-            print("<pre>".print_r($posts,true)."</pre>");
-    }
-
     /**
-     * Updates an existing Rpst model.
+     * Updates an existing InputClient model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -116,7 +91,7 @@ class RpstController extends Controller
             $url = 'http://localhost/github/cockpit11/frontend/web/index.php?r=province%2Fcreate2';
             $posts = Yii::$app->db->createCommand('SELECT * FROM province')
             ->queryAll();
-            $posts['0'] += ['test' => 'duck'];
+            $posts['0'] += ['test' => '5E763F218A6C336741566347F46C5'];
             $post = 'data='.json_encode($posts['0']);
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_POST, true);
@@ -126,7 +101,6 @@ class RpstController extends Controller
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, false);
             curl_exec($ch);
             curl_close($ch);
-
             //return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -136,7 +110,7 @@ class RpstController extends Controller
     }
 
     /**
-     * Deletes an existing Rpst model.
+     * Deletes an existing InputClient model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -150,15 +124,15 @@ class RpstController extends Controller
     }
 
     /**
-     * Finds the Rpst model based on its primary key value.
+     * Finds the InputClient model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Rpst the loaded model
+     * @return InputClient the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Rpst::findOne($id)) !== null) {
+        if (($model = InputClient::findOne($id)) !== null) {
             return $model;
         }
 

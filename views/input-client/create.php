@@ -3,17 +3,15 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Rpst */
+/* @var $model app\models\InputClient */
 
-$this->title = 'Create Rpst';
-$this->params['breadcrumbs'][] = ['label' => 'Rpsts', 'url' => ['index']];
+$this->title = 'Create Input Client';
+$this->params['breadcrumbs'][] = ['label' => 'Input Clients', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="rpst-create">
+<div class="input-client-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <? $post = 'data='.json_encode($_POST); ?>
-    <? print_r($post); ?>
 
     <?= $this->render('_form', [
         'model' => $model,

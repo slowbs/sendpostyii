@@ -3,14 +3,14 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Rpst */
+/* @var $model app\models\InputClient */
 
-$this->title = 'Update Rpst: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Rpsts', 'url' => ['index']];
+$this->title = 'Update Input Client: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Input Clients', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="rpst-update">
+<div class="input-client-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
