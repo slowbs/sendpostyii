@@ -1,0 +1,48 @@
+//sync by amphur
+select k.kpi as kpi_id, amphur.amphurcode as apcode  FROM kpi_index k
+inner join amphur where not exists 
+(select * from input_amphur i
+            where i.apcode = amphur.amphurcode and i.kpi_id = k.kpi);
+
+//sync amphur with insert
+insert into input_amphur (`apcode`,`kpi_id`)
+select  amphur.amphurcode as apcode, k.kpi as kpi_id FROM kpi_index k
+inner join amphur where not exists 
+(select * from input_amphur i
+            where i.apcode = amphur.amphurcode and i.kpi_id = k.kpi);
+
+//sync by client
+select  client.amphurcode as apcode, client.hospcode as hospcode, k.kpi as kpi_id FROM kpi_index k
+inner join client where not exists 
+(select * from input_client i
+            where i.apcode = client.amphurcode and i.hospcode = client.hospcode and i.kpi_id = k.kpi)
+            ORDER by kpi_id, hospcode;
+
+
+//sync client with insert
+insert into input_client (`apcode`,`hospcode`,`kpi_id`)
+select  client.amphurcode as apcode, client.hospcode as hospcode, k.kpi as kpi_id FROM kpi_index k
+inner join client where not exists 
+(select * from input_client i
+            where i.apcode = client.amphurcode and i.hospcode = client.hospcode and i.kpi_id = k.kpi)
+            ORDER by kpi_id, hospcode;
+
+//sync province
+ SELECT  kpi FROM  kpi_index
+        WHERE   NOT EXISTS
+        (
+        SELECT  NULL
+        FROM    province
+        WHERE   province.kpiid = kpi_index.kpi
+        )
+
+
+//sync province with insert
+insert into province(`kpiid`)
+ SELECT  kpi FROM  kpi_index
+        WHERE   NOT EXISTS
+        (
+        SELECT  NULL
+        FROM    province
+        WHERE   province.kpiid = kpi_index.kpi
+        )

@@ -1,0 +1,287 @@
+UPDATE input_amphur SET 
+a1 = (SELECT SUM(a1) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+a2 = (SELECT SUM(a2) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+a3 = (SELECT SUM(a3) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+a4 = (SELECT SUM(a4) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+a5 = (SELECT SUM(a5) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+a6 = (SELECT SUM(a6) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+a7 = (SELECT SUM(a7) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+a8 = (SELECT SUM(a8) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+a9 = (SELECT SUM(a9) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+a10 = (SELECT SUM(a10) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+a11 = (SELECT SUM(a11) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+a12 = (SELECT SUM(a12) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+b1 = (SELECT SUM(b1) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+b2 = (SELECT SUM(b2) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+b3 = (SELECT SUM(b3) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+b4 = (SELECT SUM(b4) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+b5 = (SELECT SUM(b5) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+b6 = (SELECT SUM(b6) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+b7 = (SELECT SUM(b7) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+b8 = (SELECT SUM(b8) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+b9 = (SELECT SUM(b9) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+b10 = (SELECT SUM(b10) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+b11 = (SELECT SUM(b11) FROM input_client WHERE input_client.apcode = input_amphur.apcode),
+b12 = (SELECT SUM(b12) FROM input_client WHERE input_client.apcode = input_amphur.apcode)
+
+
+
+UPDATE input_amphur SET 
+a1 = (SELECT SUM(a1) FROM input_client WHERE input_amphur.apcode =  input_client.apcode)
+where input_amphur.apcode = 1
+
+
+UPDATE input_amphur SET 
+a1 = (SELECT SUM(a1) FROM input_client WHERE input_client.apcode = 01),
+a2 = (SELECT SUM(a2) FROM input_client WHERE input_client.apcode = 01)
+where input_amphur.apcode = 01
+
+
+
+
+
+UPDATE input_amphur SET 
+a1 = (SELECT SUM(a1) FROM input_client WHERE input_client.apcode = 01),
+a2 = (SELECT SUM(a2) FROM input_client WHERE input_client.apcode = 01),
+a3 = (SELECT SUM(a3) FROM input_client WHERE input_client.apcode = 01),
+a4 = (SELECT SUM(a4) FROM input_client WHERE input_client.apcode = 01),
+a5 = (SELECT SUM(a5) FROM input_client WHERE input_client.apcode = 01),
+a6 = (SELECT SUM(a6) FROM input_client WHERE input_client.apcode = 01),
+a7 = (SELECT SUM(a7) FROM input_client WHERE input_client.apcode = 01),
+a8 = (SELECT SUM(a8) FROM input_client WHERE input_client.apcode = 01),
+a9 = (SELECT SUM(a9) FROM input_client WHERE input_client.apcode = 01),
+a10 = (SELECT SUM(a10) FROM input_client WHERE input_client.apcode = 01),
+a11 = (SELECT SUM(a11) FROM input_client WHERE input_client.apcode = 01),
+a12 = (SELECT SUM(a12) FROM input_client WHERE input_client.apcode = 01),
+b1 = (SELECT SUM(b1) FROM input_client WHERE input_client.apcode = 01),
+b2 = (SELECT SUM(b2) FROM input_client WHERE input_client.apcode = 01),
+b3 = (SELECT SUM(b3) FROM input_client WHERE input_client.apcode = 01),
+b4 = (SELECT SUM(b4) FROM input_client WHERE input_client.apcode = 01),
+b5 = (SELECT SUM(b5) FROM input_client WHERE input_client.apcode = 01),
+b6 = (SELECT SUM(b6) FROM input_client WHERE input_client.apcode = 01),
+b7 = (SELECT SUM(b7) FROM input_client WHERE input_client.apcode = 01),
+b8 = (SELECT SUM(b8) FROM input_client WHERE input_client.apcode = 01),
+b9 = (SELECT SUM(b9) FROM input_client WHERE input_client.apcode = 01),
+b10 = (SELECT SUM(b10) FROM input_client WHERE input_client.apcode = 01),
+b11 = (SELECT SUM(b11) FROM input_client WHERE input_client.apcode = 01),
+b12 = (SELECT SUM(b12) FROM input_client WHERE input_client.apcode = 01)
+where input_amphur.apcode = 01
+
+
+
+UPDATE input_amphur SET 
+a1 = (SELECT SUM(a1) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+a2 = (SELECT SUM(a2) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+a3 = (SELECT SUM(a3) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+a4 = (SELECT SUM(a4) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+a5 = (SELECT SUM(a5) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+a6 = (SELECT SUM(a6) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+a7 = (SELECT SUM(a7) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+a8 = (SELECT SUM(a8) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+a9 = (SELECT SUM(a9) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+a10 = (SELECT SUM(a10) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+a11 = (SELECT SUM(a11) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+a12 = (SELECT SUM(a12) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+b1 = (SELECT SUM(b1) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+b2 = (SELECT SUM(b2) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+b3 = (SELECT SUM(b3) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+b4 = (SELECT SUM(b4) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+b5 = (SELECT SUM(b5) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+b6 = (SELECT SUM(b6) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+b7 = (SELECT SUM(b7) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+b8 = (SELECT SUM(b8) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+b9 = (SELECT SUM(b9) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+b10 = (SELECT SUM(b10) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+b11 = (SELECT SUM(b11) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100),
+b12 = (SELECT SUM(b12) FROM input_client WHERE input_client.apcode = 01 and kpi_id = 00100)
+where input_amphur.apcode = 01 and input_amphur.kpi_id = 00100
+
+
+
+a1 = (SELECT SUM(a1) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id)
+where input_amphur.apcode = NEW.apcode and input_amphur.kpi_id = NEW.kpi_id
+
+
+
+
+
+//
+UPDATE input_amphur SET 
+a1 = (SELECT SUM(a1) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+a2 = (SELECT SUM(a2) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+a3 = (SELECT SUM(a3) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+a4 = (SELECT SUM(a4) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+a5 = (SELECT SUM(a5) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+a6 = (SELECT SUM(a6) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+a7 = (SELECT SUM(a7) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+a8 = (SELECT SUM(a8) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+a9 = (SELECT SUM(a9) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+a10 = (SELECT SUM(a10) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+a11 = (SELECT SUM(a11) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+a12 = (SELECT SUM(a12) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+b1 = (SELECT SUM(b1) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+b2 = (SELECT SUM(b2) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+b3 = (SELECT SUM(b3) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+b4 = (SELECT SUM(b4) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+b5 = (SELECT SUM(b5) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+b6 = (SELECT SUM(b6) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+b7 = (SELECT SUM(b7) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+b8 = (SELECT SUM(b8) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+b9 = (SELECT SUM(b9) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+b10 = (SELECT SUM(b10) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+b11 = (SELECT SUM(b11) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id),
+b12 = (SELECT SUM(b12) FROM input_client WHERE input_client.apcode =  NEW.apcode
+     and input_client.kpi_id = NEW.kpi_id)
+where input_amphur.apcode = NEW.apcode and input_amphur.kpi_id = NEW.kpi_id
+//
+
+
+
+update input_client SET a1 = '1', a2 = '1', a5 = '1',
+a6 = '1', a7 = '1', a8 = '1', a11 = '1'
+where apcode = '01' and kpi_id = '00100' and hospcode in ('08751','08756')
+
+
+
+UPDATE  input_amphur a
+        INNER JOIN
+        (
+            SELECT  sum(a1) as som1, sum(a2) as som2, apcode
+            FROM    input_client
+            where input_client.apcode = '01'
+            GROUP   BY apcode
+        ) b ON  b.apcode = a.apcode
+SET     a.a1 = b.som1,
+        a.a2 = b.som2
+where a.apcode = '01'
+
+
+UPDATE  input_amphur a
+        INNER JOIN
+        (
+            SELECT  sum(a1) as som1, sum(a2) as som2, apcode
+            FROM    input_client
+            where input_client.apcode = '01') b on b.apcode = a.apcode
+SET     a.a1 = b.som1,
+        a.a2 = b.som2
+where a.apcode = '01'
+
+
+
+UPDATE  input_amphur a
+        INNER JOIN
+        (
+            SELECT  sum(a1) as som1, sum(a2) as som2, sum(a3) as som3, sum(a4) as som4,
+	sum(a5) as som5, sum(a6) as som6, sum(a7) as som7, sum(a8) as som8,
+	sum(a9) as som9, sum(a10) as som10, sum(a11) as som11, sum(a12) as som12, 
+	sum(b1) as bom1, sum(b2) as bom2, sum(b3) as bom3, sum(b4) as bom4,
+	sum(b5) as bom5, sum(b6) as bom6, sum(b7) as bom7, sum(b8) as bom8,
+	sum(b9) as bom9, sum(b10) as bom10, sum(b11) as bom11, sum(b12) as bom12,
+	apcode
+            FROM    input_client
+            where input_client.apcode = '01') b on b.apcode = a.apcode
+SET     a.a1 = b.som1,
+        a.a2 = b.som2,
+	a.a3 = b.som3,
+        a.a4 = b.som4,
+	a.a5 = b.som5,
+        a.a6 = b.som6,
+        a.a7 = b.som7,
+	a.a8 = b.som8,
+        a.a9 = b.som9,
+	a.a10 = b.som10,
+        a.a11 = b.som11,
+        a.a12 = b.som12,
+	a.b1 = b.bom1,
+	a.b2 = b.bom2,
+	a.b3 = b.bom3,
+	a.b4 = b.bom4,
+	a.b5 = b.bom5,
+	a.b6 = b.bom6,
+	a.b7 = b.bom7,
+	a.b8 = b.bom8,
+	a.b9 = b.bom9,
+	a.b10 = b.bom10,
+	a.b11 = b.bom11,
+	a.b12 = b.bom12
+where a.apcode = '01'
+
+
+
+UPDATE  input_amphur a
+        INNER JOIN
+        (
+            SELECT  sum(a1) as som1, sum(a2) as som2, sum(a3) as som3, sum(a4) as som4,
+	sum(a5) as som5, sum(a6) as som6, sum(a7) as som7, sum(a8) as som8,
+	sum(a9) as som9, sum(a10) as som10, sum(a11) as som11, sum(a12) as som12, 
+	sum(b1) as bom1, sum(b2) as bom2, sum(b3) as bom3, sum(b4) as bom4,
+	sum(b5) as bom5, sum(b6) as bom6, sum(b7) as bom7, sum(b8) as bom8,
+	sum(b9) as bom9, sum(b10) as bom10, sum(b11) as bom11, sum(b12) as bom12,
+	apcode
+            FROM    input_client
+            where input_client.apcode = NEW.apcode and input_client.kpi_id = NEW.kpi_id) b on b.apcode = a.apcode
+SET     a.a1 = b.som1,
+        a.a2 = b.som2,
+	a.a3 = b.som3,
+        a.a4 = b.som4,
+	a.a5 = b.som5,
+        a.a6 = b.som6,
+        a.a7 = b.som7,
+	a.a8 = b.som8,
+        a.a9 = b.som9,
+	a.a10 = b.som10,
+        a.a11 = b.som11,
+        a.a12 = b.som12,
+	a.b1 = b.bom1,
+	a.b2 = b.bom2,
+	a.b3 = b.bom3,
+	a.b4 = b.bom4,
+	a.b5 = b.bom5,
+	a.b6 = b.bom6,
+	a.b7 = b.bom7,
+	a.b8 = b.bom8,
+	a.b9 = b.bom9,
+	a.b10 = b.bom10,
+	a.b11 = b.bom11,
+	a.b12 = b.bom12
+where a.apcode = NEW.apcode and a.kpi_id = NEW.kpi_id
+
+
+
+SELECT * from  input_amphur a
+        INNER JOIN
+        (
+            SELECT  sum(a1) as som1, sum(a2) as som2, sum(a3) as som3, sum(a4) as som4,
+	sum(a5) as som5, sum(a6) as som6, sum(a7) as som7, sum(a8) as som8,
+	sum(a9) as som9, sum(a10) as som10, sum(a11) as som11, sum(a12) as som12, 
+	sum(b1) as bom1, sum(b2) as bom2, sum(b3) as bom3, sum(b4) as bom4,
+	sum(b5) as bom5, sum(b6) as bom6, sum(b7) as bom7, sum(b8) as bom8,
+	sum(b9) as bom9, sum(b10) as bom10, sum(b11) as bom11, sum(b12) as bom12,
+	apcode
+            FROM    input_client
+            where input_client.apcode = '01') b on b.apcode = a.apcode
+where a.apcode = '01'
