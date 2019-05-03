@@ -31,14 +31,22 @@ class ProvinceController extends Controller
 
     public function beforeAction($action) 
     {
-        if($action->id == "create2"){
+        if($action->id == "create2") {
+            if (!empty($_POST["data"])) {
             $content = json_decode($_POST['data'],true);
-            if($content['test'] == "5E763F218A6C336741566347F46C5"){
-        $this->enableCsrfValidation = false;
-        }   
+                if($content['test'] == "5E763F218A6C336741566347F46C5") {
+                $this->enableCsrfValidation = false;
+                }
+            }
+            else{
+                echo "there is no data";
+                }
+        }
+        else{
+            return parent::beforeAction($action);
+            }
     }
-        return parent::beforeAction($action); 
-    }
+
 
 
     /* public function beforeAction($action) 
