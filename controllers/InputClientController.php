@@ -91,6 +91,7 @@ class InputClientController extends Controller
             $params = [':kpi_id' => $model->kpi_id];
             //$kpi_id = '00200';
 
+            //$url = 'http://localhost/github/jotform/4.php';
             $url = 'http://localhost/github/cockpit11/frontend/web/index.php?r=province%2Fcreate2';
             $posts = Yii::$app->db->createCommand('SELECT * FROM province where kpiid =:kpi_id')
             ->bindValues($params)
