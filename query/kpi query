@@ -1,0 +1,23 @@
+//test select left join amphur and kpi_index
+SELECT * FROM `amphur`
+left join kpi_index on kpi_index.kpi = 00400
+
+
+//test select left join client and kpi_index
+SELECT * FROM `client`
+left join kpi_index on kpi_index.kpi = 00400
+where client.amphurcode = 01
+
+
+//select input_amphur join with amphur, kpi_index
+SELECT * FROM `input_amphur` 
+left join amphur on input_amphur.apcode = amphur.amphurcode
+left join kpi_index on kpi_index.kpi = 00100
+WHERE kpi_id = 00100
+
+//select input_client join with amphur, client, kpi_index
+SELECT * FROM `input_client` 
+left join client on input_client.hospcode = client.hospcode
+left join amphur on input_client.apcode = amphur.amphurcode
+left join kpi_index on kpi_index.kpi = 00100
+WHERE kpi_id = 00100 and apcode = 01

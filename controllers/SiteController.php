@@ -9,6 +9,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use yii\data\ArrayDataProvider;
 
 class SiteController extends Controller
 {
@@ -124,5 +125,78 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionKpi()
+    {
+        $kpi = Yii::$app->db->createCommand('SELECT * FROM kpi_index')
+        //->bindValues($params)
+        ->queryAll();
+
+        $dataProvider = new ArrayDataProvider([
+            'allModels' => $kpi,
+            'pagination' => false,
+            'sort' => !empty($cols) ? ['attributes' => $cols] : FALSE,
+        ]);
+        return $this->render('kpi', [
+            'kpi' => $kpi,  'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    public function actionAmphur($kpi_id)
+    {
+        $params = [':kpi_id' => $kpi_id];
+        $kpi = Yii::$app->db->createCommand('SELECT * FROM input_amphur
+        left join amphur on input_amphur.apcode = amphur.amphurcode
+        left join kpi_index on kpi_index.kpi =:kpi_id
+        WHERE kpi_id = :kpi_id')
+        //$kpi = Yii::$app->db->createCommand()
+        //->select('id')
+        //->from('amphur')
+        /* ->join('kpi_index', 'kpi_index.kpi = 00400') */
+        //->joinWith('kpi_index','kpi_index =: $kpi')
+        ->bindValues($params)
+        ->queryAll();
+
+        $dataProvider = new ArrayDataProvider([
+            'allModels' => $kpi,
+            'pagination' => false,
+            'sort' => !empty($cols) ? ['attributes' => $cols] : FALSE,
+        ]);
+        return $this->render('amphur', [
+            'kpi' => $kpi,  'dataProvider' => $dataProvider, 'kpi_id' => $kpi_id,
+        ]);
+    }
+
+    public function actionRpst($kpi_id, $amphurcode)
+    {
+        $params = [':kpi_id' => $kpi_id, ':amphurcode' => $amphurcode];
+        //$params = [":kpi_id" => $kpi_id, ":amphurcode" => $amphurcode];
+        $kpi = Yii::$app->db->createCommand('SELECT input_client.id as id, client.hospname as hospname,
+        input_client.a1, input_client.a2, input_client.a3, input_client.a4, input_client.a5,
+        input_client.a6, input_client.a7, input_client.a8, input_client.a9, input_client.a10,
+        input_client.a11, input_client.a12, input_client.hospcode,
+        amphur.amphurcode, client.amphurname, kpi_index.kpi, kpi_index.kpi_name
+        FROM input_client 
+        left join client on input_client.hospcode = client.hospcode
+        left join amphur on input_client.apcode = amphur.amphurcode
+        left join kpi_index on kpi_index.kpi =:kpi_id
+        WHERE kpi_id = :kpi_id and apcode=:amphurcode')
+        //$kpi = Yii::$app->db->createCommand()
+        //->select('id')
+        //->from('amphur')
+        /* ->join('kpi_index', 'kpi_index.kpi = 00400') */
+        //->joinWith('kpi_index','kpi_index =: $kpi')
+        ->bindValues($params)
+        ->queryAll();
+
+        $dataProvider = new ArrayDataProvider([
+            'allModels' => $kpi,
+            'pagination' => false,
+            'sort' => !empty($cols) ? ['attributes' => $cols] : FALSE,
+        ]);
+        return $this->render('rpst', [
+            'kpi' => $kpi,  'dataProvider' => $dataProvider, 'kpi_id' => $kpi_id, 'amphurcode' => $amphurcode,
+        ]);
     }
 }
