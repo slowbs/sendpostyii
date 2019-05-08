@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
         fuck this shit
     </p>
 
-<table class="table table-bordered">
+<!-- <table class="table table-bordered">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
  }; ?>
 
   </tbody>
-</table>
+</table> -->
 
 <?= GridView::widget([
     'dataProvider' => $dataProvider,
