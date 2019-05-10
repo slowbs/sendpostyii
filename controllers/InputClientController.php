@@ -107,6 +107,7 @@ class InputClientController extends Controller
             curl_exec($ch);
             curl_close($ch);
             //return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['/site/rpst','kpi_id' => $model['kpi_id'],'amphurcode' => $model['apcode']]);
         }
 
         return $this->render('update', [

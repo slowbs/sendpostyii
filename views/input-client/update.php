@@ -18,4 +18,8 @@ $this->params['breadcrumbs'][] = 'Update';
         'model' => $model,
     ]) ?>
 
+<h1><?php echo $model['hospcode']." ".$model['apcode']." ".$model['kpi_id'];?></h1>
+
+<? //print_r($kpi_id) ?>
+<? //print_r($amphurcode) ?>
 </div>
