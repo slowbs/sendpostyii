@@ -45,15 +45,21 @@ $this->params['breadcrumbs'][] = $this->title;
 <?= GridView::widget([
     'dataProvider' => $dataProvider,
     'columns' => [
-        'hospcode',
+        [
+            'attribute' => 'hospcode',
+            'header'=> 'hospcode',
+            //'contentOptions' => ['rowspan' => '2',],
+            
+        ],
         [
             'attribute' => 'hospname',
-            'label' => 'ชื่อสถานบริการ',
+            'header' => 'ชื่อสถานบริการ',
             'headerOptions' => [ 'class' => 'text-center'],
             'format' => 'raw',
             'value' => function ($data) {
                 return Html::a($data['hospname'], ['/input-client/update','id' => $data['id']]);
-            }
+            },
+            //'contentOptions' => ['rowspan' => '2',],
         ],
         'a1',
         'a2',
@@ -71,6 +77,35 @@ $this->params['breadcrumbs'][] = $this->title;
     ],
     
 ]) ?>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td colspan="3">Jacob</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
 
 
 <?php print_r($kpi_id); echo $kpis['kpi_name'] ?>
