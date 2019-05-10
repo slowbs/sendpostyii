@@ -138,8 +138,21 @@ class SiteController extends Controller
             'pagination' => false,
             'sort' => !empty($cols) ? ['attributes' => $cols] : FALSE,
         ]);
+
+        $pp = Yii::$app->db->createCommand('SELECT * FROM kpi_index where ex = "pp"')
+        //->bindValues($params)
+        ->queryAll();
+
+        $dataProvider2 = new ArrayDataProvider([
+            'allModels' => $pp,
+            'pagination' => false,
+            'sort' => !empty($cols) ? ['attributes' => $cols] : FALSE,
+        ]);
+
+
+
         return $this->render('kpi', [
-            'kpi' => $kpi,  'dataProvider' => $dataProvider,
+            'kpi' => $kpi,  'dataProvider' => $dataProvider, 'dataProvider2' => $dataProvider2,
         ]);
     }
 
