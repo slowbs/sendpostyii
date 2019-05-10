@@ -143,8 +143,48 @@ class SiteController extends Controller
         //->bindValues($params)
         ->queryAll();
 
-        $dataProvider2 = new ArrayDataProvider([
+        $pp = new ArrayDataProvider([
             'allModels' => $pp,
+            'pagination' => false,
+            'sort' => !empty($cols) ? ['attributes' => $cols] : FALSE,
+        ]);
+
+        $se = Yii::$app->db->createCommand('SELECT * FROM kpi_index where ex = "se"')
+        //->bindValues($params)
+        ->queryAll();
+
+        $se = new ArrayDataProvider([
+            'allModels' => $se,
+            'pagination' => false,
+            'sort' => !empty($cols) ? ['attributes' => $cols] : FALSE,
+        ]);
+
+        $ge = Yii::$app->db->createCommand('SELECT * FROM kpi_index where ex = "ge"')
+        //->bindValues($params)
+        ->queryAll();
+
+        $ge = new ArrayDataProvider([
+            'allModels' => $ge,
+            'pagination' => false,
+            'sort' => !empty($cols) ? ['attributes' => $cols] : FALSE,
+        ]);
+
+        $pe = Yii::$app->db->createCommand('SELECT * FROM kpi_index where ex = "pe"')
+        //->bindValues($params)
+        ->queryAll();
+
+        $pe = new ArrayDataProvider([
+            'allModels' => $pe,
+            'pagination' => false,
+            'sort' => !empty($cols) ? ['attributes' => $cols] : FALSE,
+        ]);
+
+        $ncd = Yii::$app->db->createCommand('SELECT * FROM kpi_index where ex = "ncd"')
+        //->bindValues($params)
+        ->queryAll();
+
+        $ncd = new ArrayDataProvider([
+            'allModels' => $ncd,
             'pagination' => false,
             'sort' => !empty($cols) ? ['attributes' => $cols] : FALSE,
         ]);
@@ -152,7 +192,9 @@ class SiteController extends Controller
 
 
         return $this->render('kpi', [
-            'kpi' => $kpi,  'dataProvider' => $dataProvider, 'dataProvider2' => $dataProvider2,
+            'kpi' => $kpi,  'dataProvider' => $dataProvider, 'pp' => $pp,
+            'se' => $se, 'ge' => $ge, 'pe' => $pe, 'ncd' => $ncd,
+            
         ]);
     }
 
