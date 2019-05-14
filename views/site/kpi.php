@@ -25,6 +25,7 @@ echo Tabs::widget([
                 'dataProvider' => $dataProvider,
                 'columns' => [
                     'id',
+                    'kpi',
                     [
                         'attribute' => 'kpi_name',
                         'label' => 'ตัวชี้วัด',
@@ -48,6 +49,7 @@ echo Tabs::widget([
                 'dataProvider' => $pp,
                 'columns' => [
                     'id',
+                    'kpi',
                     [
                         'attribute' => 'kpi_name',
                         'label' => 'ตัวชี้วัด',
@@ -71,6 +73,7 @@ echo Tabs::widget([
                 'dataProvider' => $se,
                 'columns' => [
                     'id',
+                    'kpi',
                     [
                         'attribute' => 'kpi_name',
                         'label' => 'ตัวชี้วัด',
@@ -94,6 +97,7 @@ echo Tabs::widget([
                 'dataProvider' => $ge,
                 'columns' => [
                     'id',
+                    'kpi',
                     [
                         'attribute' => 'kpi_name',
                         'label' => 'ตัวชี้วัด',
@@ -117,6 +121,7 @@ echo Tabs::widget([
                 'dataProvider' => $pe,
                 'columns' => [
                     'id',
+                    'kpi',
                     [
                         'attribute' => 'kpi_name',
                         'label' => 'ตัวชี้วัด',
@@ -140,6 +145,31 @@ echo Tabs::widget([
                 'dataProvider' => $ncd,
                 'columns' => [
                     'id',
+                    'kpi',
+                    [
+                        'attribute' => 'kpi_name',
+                        'label' => 'ตัวชี้วัด',
+                        'headerOptions' => [ 'class' => 'text-center'],
+                        'format' => 'raw',
+                        'value' => function ($data) {
+                            return Html::a($data['kpi_name'], ['/site/amphur','kpi_id' => $data['kpi']]);
+                        }
+                    ],
+                    'ex',
+                    // ...
+                ],
+                
+            ]) ,
+            //'options' => ['id' => 'myveryownID'],
+        ],
+        [
+            'label' => 'NULL',
+            'content' => 
+            GridView::widget([
+                'dataProvider' => $null,
+                'columns' => [
+                    'id',
+                    'kpi',
                     [
                         'attribute' => 'kpi_name',
                         'label' => 'ตัวชี้วัด',

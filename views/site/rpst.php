@@ -17,30 +17,57 @@ $this->params['breadcrumbs'][] = $this->title;
         fuck this shit
     </p>
 
-<!-- <table class="table table-bordered">
+<table class="table table-bordered">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">ม.ค.</th>
+      <th scope="col">ก.พ.</th>
+      <th scope="col">มี.ค.</th>
+      <th scope="col">เม.ย.</th>
+      <th scope="col">พ.ค.</th>
+      <th scope="col">มิ.ย.</th>
+      <th scope="col">ก.ค.</th>
+      <th scope="col">ส.ค.</th>
+      <th scope="col">ก.ย.</th>
+      <th scope="col">ต.ค.</th>
+      <th scope="col">พ.ย.</th>
+      <th scope="col">ธ.ค.</th>
     </tr>
   </thead>
   <tbody>
   <?php foreach($kpi as $kpis){
    ?>
        <tr>
-      <th scope="row"><?php echo $kpis['amphurcode'] ?></th>
-      <td><?php echo $kpis['amphurname'] ?></td>
-      <td><?php echo $kpis['hospname'] ?></td>
-      <td>@mdo</td>
+      <th scope="row" rowspan="2" style="height:65px"><?php echo $kpis['hospcode'] ?></th>
+      <td rowspan="2"><?= Html::a($kpis['hospname'], ['/input-client/update','id' => $kpis['id']]) ?></td>
+      <td><?php echo $kpis['a1'] ?></td>
+      <td><?php echo $kpis['a2'] ?></td>
+      <td><?php echo $kpis['a3'] ?></td>
+      <td><?php echo $kpis['a4'] ?></td>
+      <td><?php echo $kpis['a5'] ?></td>
+      <td><?php echo $kpis['a6'] ?></td>
+      <td><?php echo $kpis['a7'] ?></td>
+      <td><?php echo $kpis['a8'] ?></td>
+      <td><?php echo $kpis['a9'] ?></td>
+      <td><?php echo $kpis['a10'] ?></td>
+      <td><?php echo $kpis['a11'] ?></td>
+      <td><?php echo $kpis['a12'] ?></td>
+      <!-- <td>@mdo</td> -->
+    </tr>
+      <td colspan="3" style="text-align:center"><?php echo $kpis['t1'] ?></td>
+      <td colspan="3" style="text-align:center"><?php echo $kpis['t2'] ?></td>
+      <td colspan="3" style="text-align:center"><?php echo $kpis['t3'] ?></td>
+      <td colspan="3" style="text-align:center"><?php echo $kpis['t4'] ?></td>
+    <tr>
     </tr>
     <?php
 
  }; ?>
 
   </tbody>
-</table> -->
+</table>
 
 <?= GridView::widget([
     'dataProvider' => $dataProvider,
@@ -78,7 +105,7 @@ $this->params['breadcrumbs'][] = $this->title;
     
 ]) ?>
 
-<table class="table table-bordered">
+<!-- <table class="table table-bordered">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -105,7 +132,7 @@ $this->params['breadcrumbs'][] = $this->title;
       <td>@twitter</td>
     </tr>
   </tbody>
-</table>
+</table> -->
 
 
 <?php print_r($kpi_id); echo $kpis['kpi_name'] ?>

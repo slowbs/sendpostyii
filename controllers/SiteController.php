@@ -189,11 +189,21 @@ class SiteController extends Controller
             'sort' => !empty($cols) ? ['attributes' => $cols] : FALSE,
         ]);
 
+        $null = Yii::$app->db->createCommand('SELECT * FROM kpi_index where ex = ""')
+        //->bindValues($params)
+        ->queryAll();
+
+        $null = new ArrayDataProvider([
+            'allModels' => $null,
+            'pagination' => false,
+            'sort' => !empty($cols) ? ['attributes' => $cols] : FALSE,
+        ]);
+
 
 
         return $this->render('kpi', [
             'kpi' => $kpi,  'dataProvider' => $dataProvider, 'pp' => $pp,
-            'se' => $se, 'ge' => $ge, 'pe' => $pe, 'ncd' => $ncd,
+            'se' => $se, 'ge' => $ge, 'pe' => $pe, 'ncd' => $ncd, 'null' => $null,
             
         ]);
     }
@@ -227,7 +237,7 @@ class SiteController extends Controller
     {
         $params = [':kpi_id' => $kpi_id, ':amphurcode' => $amphurcode];
         //$params = [":kpi_id" => $kpi_id, ":amphurcode" => $amphurcode];
-        $kpi = Yii::$app->db->createCommand('SELECT input_client.id as id, client.hospname as hospname,
+        /* $kpi = Yii::$app->db->createCommand('SELECT input_client.id as id, client.hospname as hospname,
         input_client.a1, input_client.a2, input_client.a3, input_client.a4, input_client.a5,
         input_client.a6, input_client.a7, input_client.a8, input_client.a9, input_client.a10,
         input_client.a11, input_client.a12, input_client.hospcode,
@@ -236,7 +246,24 @@ class SiteController extends Controller
         left join client on input_client.hospcode = client.hospcode
         left join amphur on input_client.apcode = amphur.amphurcode
         left join kpi_index on kpi_index.kpi =:kpi_id
-        WHERE kpi_id = :kpi_id and apcode=:amphurcode')
+        WHERE kpi_id = :kpi_id and apcode=:amphurcode') */
+        $kpi = Yii::$app->db->createCommand('SELECT input_client.id as id, client.hospname as hospname,
+        input_client.a1, input_client.a2, input_client.a3, input_client.a4, input_client.a5,
+        input_client.a6, input_client.a7, input_client.a8, input_client.a9, input_client.a10,
+        input_client.a11, input_client.a12, input_client.hospcode, 
+        amphur.amphurcode, client.amphurname, kpi_index.kpi, kpi_index.kpi_name,
+        tsum.t1, tsum.t2, tsum.t3, tsum.t4
+        FROM input_client 
+        left join client on input_client.hospcode = client.hospcode
+        left join amphur on input_client.apcode = amphur.amphurcode
+        left join kpi_index on kpi_index.kpi = 00100
+        left join
+        (select hospcode,input_client.kpi_id, sum(a1+a2+a3) as t1,
+        sum(a4+a5+a6) as t2, sum(a7+a8+a9) as t3, sum(a10+a11+a12) as t4
+        from input_client
+        GROUP by input_client.kpi_id, hospcode
+        ) tsum on input_client.kpi_id = tsum.kpi_id and input_client.hospcode = tsum.hospcode
+        WHERE input_client.kpi_id = :kpi_id and input_client.apcode=:amphurcode')
         //$kpi = Yii::$app->db->createCommand()
         //->select('id')
         //->from('amphur')
