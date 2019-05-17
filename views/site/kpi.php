@@ -36,6 +36,16 @@ echo Tabs::widget([
                         }
                     ],
                     'ex',
+                    //'etc2',
+                    [
+                        'attribute' => 'etc2',
+                        'label' => 'HDC',
+                        'headerOptions' => [ 'class' => 'text-center'],
+                        'format' => 'raw',
+                        'value' => function ($data) {
+                            return Html::a($data['etc2'], ['/site/sql','id' => $data['etc2']]);
+                        }
+                    ],
                     // ...
                 ],
                 
