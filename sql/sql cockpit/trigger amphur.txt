@@ -1,0 +1,94 @@
+// test select 1 kpi
+SELECT * from  province a
+        INNER JOIN
+        (
+            SELECT  sum(a1) as som1, sum(a2) as som2, sum(a3) as som3, sum(a4) as som4,
+	sum(a5) as som5, sum(a6) as som6, sum(a7) as som7, sum(a8) as som8,
+	sum(a9) as som9, sum(a10) as som10, sum(a11) as som11, sum(a12) as som12, 
+	sum(b1) as bom1, sum(b2) as bom2, sum(b3) as bom3, sum(b4) as bom4,
+	sum(b5) as bom5, sum(b6) as bom6, sum(b7) as bom7, sum(b8) as bom8,
+	sum(b9) as bom9, sum(b10) as bom10, sum(b11) as bom11, sum(b12) as bom12,
+	kpi_id
+            FROM    input_amphur
+            where input_amphur.kpi_id = '00100') b on b.kpi_id = a.kpiid
+where a.kpiid = '00100'
+
+
+// UPDATE
+// test select 1 kpi
+UPDATE province a
+        INNER JOIN
+        (
+            SELECT  sum(a1) as som1, sum(a2) as som2, sum(a3) as som3, sum(a4) as som4,
+	sum(a5) as som5, sum(a6) as som6, sum(a7) as som7, sum(a8) as som8,
+	sum(a9) as som9, sum(a10) as som10, sum(a11) as som11, sum(a12) as som12, 
+	sum(b1) as bom1, sum(b2) as bom2, sum(b3) as bom3, sum(b4) as bom4,
+	sum(b5) as bom5, sum(b6) as bom6, sum(b7) as bom7, sum(b8) as bom8,
+	sum(b9) as bom9, sum(b10) as bom10, sum(b11) as bom11, sum(b12) as bom12,
+	kpi_id
+            FROM    input_amphur
+            where input_amphur.kpi_id = '00100') b on b.kpi_id = a.kpiid
+SET     a.a1 = b.som1,
+        a.a2 = b.som2,
+	a.a3 = b.som3,
+        a.a4 = b.som4,
+	a.a5 = b.som5,
+        a.a6 = b.som6,
+        a.a7 = b.som7,
+	a.a8 = b.som8,
+        a.a9 = b.som9,
+	a.a10 = b.som10,
+        a.a11 = b.som11,
+        a.a12 = b.som12,
+	a.b1 = b.bom1,
+	a.b2 = b.bom2,
+	a.b3 = b.bom3,
+	a.b4 = b.bom4,
+	a.b5 = b.bom5,
+	a.b6 = b.bom6,
+	a.b7 = b.bom7,
+	a.b8 = b.bom8,
+	a.b9 = b.bom9,
+	a.b10 = b.bom10,
+	a.b11 = b.bom11,
+	a.b12 = b.bom12
+where a.kpiid = '00100'
+
+//UPdate with NEw in trigger
+UPDATE province a
+        INNER JOIN
+        (
+            SELECT  sum(a1) as som1, sum(a2) as som2, sum(a3) as som3, sum(a4) as som4,
+	sum(a5) as som5, sum(a6) as som6, sum(a7) as som7, sum(a8) as som8,
+	sum(a9) as som9, sum(a10) as som10, sum(a11) as som11, sum(a12) as som12, 
+	sum(b1) as bom1, sum(b2) as bom2, sum(b3) as bom3, sum(b4) as bom4,
+	sum(b5) as bom5, sum(b6) as bom6, sum(b7) as bom7, sum(b8) as bom8,
+	sum(b9) as bom9, sum(b10) as bom10, sum(b11) as bom11, sum(b12) as bom12,
+	kpi_id
+            FROM    input_amphur
+            where input_amphur.kpi_id = NEW.kpi_id) b on b.kpi_id = a.kpiid
+SET     a.a1 = b.som1,
+        a.a2 = b.som2,
+	a.a3 = b.som3,
+        a.a4 = b.som4,
+	a.a5 = b.som5,
+        a.a6 = b.som6,
+        a.a7 = b.som7,
+	a.a8 = b.som8,
+        a.a9 = b.som9,
+	a.a10 = b.som10,
+        a.a11 = b.som11,
+        a.a12 = b.som12,
+	a.b1 = b.bom1,
+	a.b2 = b.bom2,
+	a.b3 = b.bom3,
+	a.b4 = b.bom4,
+	a.b5 = b.bom5,
+	a.b6 = b.bom6,
+	a.b7 = b.bom7,
+	a.b8 = b.bom8,
+	a.b9 = b.bom9,
+	a.b10 = b.bom10,
+	a.b11 = b.bom11,
+	a.b12 = b.bom12
+where a.kpiid = NEW.kpi_id

@@ -93,6 +93,7 @@ class InputClientController extends Controller
 
             //$url = 'http://localhost/github/jotform/4.php';
             $url = 'http://localhost/github/cockpit11/frontend/web/index.php?r=province%2Fcreate2';
+            // select ข้อมูลที่จะ POST ผ่าน Curl เก็บไว้ใน array ส่งเป็น json
             $posts = Yii::$app->db->createCommand('SELECT * FROM province where kpiid =:kpi_id')
             ->bindValues($params)
             ->queryAll();

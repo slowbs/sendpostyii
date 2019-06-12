@@ -1,0 +1,7 @@
+SELECT * FROM kpi_index
+left join pr80 on pr80.rid = kpi_index.id
+where kpi_index.id = 1;
+
+
+//select id from etc for hdc_row
+select substring_index(etc, '&id=', -1) from kpi_index

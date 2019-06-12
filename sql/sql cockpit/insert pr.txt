@@ -1,0 +1,53 @@
+//sync pr1 with kpi_index
+ SELECT  kpi_index.id FROM   kpi_index
+        WHERE   NOT EXISTS
+        (
+        SELECT  NULL
+        FROM    pr1
+        WHERE   pr1.rid = kpi_index.id
+        )
+
+//sync with insert
+INSERT into pr1 (rid)
+ SELECT  kpi_index.id FROM kpi_index
+        WHERE   NOT EXISTS
+        (
+        SELECT  NULL
+        FROM    pr1
+        WHERE   pr1.rid = kpi_index.id
+        )
+
+//sync with order by
+ select * from (SELECT "1" as input, kpi_index.id FROM kpi_index
+        WHERE   NOT EXISTS
+        (
+        SELECT  NULL
+        FROM    pr1
+        WHERE   pr1.rid = kpi_index.id
+        )
+UNION
+ SELECT "2" as input, kpi_index.id FROM kpi_index
+        WHERE   NOT EXISTS
+        (
+        SELECT  NULL
+        FROM    pr1
+        WHERE   pr1.rid = kpi_index.id) 
+        ) a ORDER by id;
+
+//sync with insert and order by
+ insert into pr1 (year, type, rid)
+ select * from (SELECT "2562","1" as input, kpi_index.id FROM kpi_index
+        WHERE   NOT EXISTS
+        (
+        SELECT  NULL
+        FROM    pr1
+        WHERE   pr1.rid = kpi_index.id
+        )
+UNION
+ SELECT "2562","2" as input, kpi_index.id FROM kpi_index
+        WHERE   NOT EXISTS
+        (
+        SELECT  NULL
+        FROM    pr1
+        WHERE   pr1.rid = kpi_index.id) 
+        ) a ORDER by id, input;

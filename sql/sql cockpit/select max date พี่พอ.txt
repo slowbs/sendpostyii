@@ -1,0 +1,22 @@
+select testdate.* 
+from testdate
+join 
+(
+    select cid, max(date_serve) as max_dt 
+    from testdate
+    group by cid
+) t
+on testdate.cid= t.cid and testdate.date_serve = t.max_dt 
+
+select * from testdate where date_serve in (
+SELECT max(date_serve) FROM `testdate` WHERE 1 GROUP by cid)
+
+
+
+SELECT *
+FROM (
+     SELECT testdate.* from testdate
+     ORDER BY testdate.cid ASC, testdate.date_serve DESC
+     LIMIT 18446744073709551615
+     ) AS sub
+GROUP BY sub.cid
